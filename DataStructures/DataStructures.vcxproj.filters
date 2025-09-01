@@ -22,6 +22,9 @@
     <Filter Include="Header Files\Stack">
       <UniqueIdentifier>{8738d64a-04f6-4c91-9b93-c24f789fe237}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\LList">
+      <UniqueIdentifier>{2894a993-dfa9-4000-85a9-e9d770e1694a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -37,6 +40,9 @@
     </ClInclude>
     <ClInclude Include="Node\Node.h">
       <Filter>Header Files\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="LList\OrderedList.h">
+      <Filter>Header Files\LList</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
