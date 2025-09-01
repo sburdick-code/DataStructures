@@ -13,7 +13,13 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Stack">
+    <Filter Include="Header Files\Node">
+      <UniqueIdentifier>{fa1ed14e-b29f-412c-a29f-f09416489b5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Queue">
+      <UniqueIdentifier>{d7642af5-dfea-426d-a7fb-c020494ce1bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Stack">
       <UniqueIdentifier>{8738d64a-04f6-4c91-9b93-c24f789fe237}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -24,7 +30,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Stack\Stack.h">
-      <Filter>Source Files\Stack</Filter>
+      <Filter>Header Files\Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="Queue\Queue.h">
+      <Filter>Header Files\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="Node\Node.h">
+      <Filter>Header Files\Node</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
