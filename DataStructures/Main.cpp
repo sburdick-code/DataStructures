@@ -6,16 +6,19 @@ using namespace std;
 #include "Stack/Stack.h"
 #include "Queue/Queue.h"
 #include "LList/OrderedList.h"
+#include "LList/UnorderedList.h"
 
 void TestStack();
 void TestQueue();
 void TestOrderedList();
+void TestUnorderedList();
 
 int main()
 {
 	// TestStack();
 	// TestQueue();
-	TestOrderedList();
+	// TestOrderedList();
+	TestUnorderedList();
 }
 
 void TestStack()
@@ -261,3 +264,123 @@ void TestOrderedList()
 	cout << myList.isFull() << endl << endl;
 
 }
+
+void TestUnorderedList()
+{
+	/// <summary>
+	/// A function to stress test my Unordered Linked List data structure
+	/// </summary>
+
+	UnorderedList<int> myList;
+	int dataOut;
+
+	cout << "TESTING UNORDERED LINKED LIST" << endl << endl;
+	cout << boolalpha;
+
+	cout << "Insert 2: \t";
+	cout << myList.insert(2) << endl;
+
+	cout << "Insert 4: \t";
+	cout << myList.insert(4) << endl;
+
+	cout << "Insert 7: \t";
+	cout << myList.insert(7) << endl;
+
+	cout << "Insert 1: \t";
+	cout << myList.insert(1) << endl;
+
+	cout << "Insert 3: \t";
+	cout << myList.insert(3) << endl;
+
+	cout << "Insert 10:\t";
+	cout << myList.insert(10) << endl;
+
+	myList.display();
+	cout << endl;
+
+	dataOut = 4;
+	cout << "Remove 4: \t";
+	cout << myList.remove(dataOut) << "\t";
+	cout << dataOut << endl;
+
+	dataOut = 2;
+	cout << "Remove 2: \t";
+	cout << myList.remove(dataOut) << "\t";
+	cout << dataOut << endl;
+
+	dataOut = 10;
+	cout << "Remove 10:\t";
+	cout << myList.remove(dataOut) << "\t";
+	cout << dataOut << endl;
+
+	dataOut = 50;
+	cout << "Remove 50:\t";
+	cout << myList.remove(dataOut) << endl;
+
+	myList.display();
+	cout << endl;
+
+	dataOut = 2;
+	cout << "Retrieve 2:\t";
+	cout << myList.retrieve(dataOut) << "\t";
+	cout << dataOut << endl;
+
+	dataOut = 3;
+	cout << "Retrieve 3:\t";
+	cout << myList.retrieve(dataOut) << "\t";
+	cout << dataOut << endl;
+
+	dataOut = 7;
+	cout << "Retrieve 7:\t";
+	cout << myList.retrieve(dataOut) << "\t";
+	cout << dataOut << endl;
+
+	dataOut = 50;
+	cout << "Retrieve 50:\t";
+	cout << myList.retrieve(dataOut) << endl << endl;
+
+	cout << "viewFront:\t";
+	cout << myList.viewFront(dataOut) << "\t";
+	cout << dataOut << endl;
+
+	cout << "viewRear:\t";
+	cout << myList.viewRear(dataOut) << "\t";
+	cout << dataOut << endl;
+
+	cout << "numValues:\t";
+	cout << myList.getNumValues() << endl;
+
+	cout << "isEmpty:\t";
+	cout << myList.isEmpty() << endl;
+
+	cout << "isFull: \t";
+	cout << myList.isFull() << endl << endl;
+
+	cout << "EMPTYING LIST" << endl << endl;
+	myList.~UnorderedList();
+
+	dataOut = 50;
+	cout << "Remove 50:\t";
+	cout << myList.remove(dataOut) << endl;
+
+	dataOut = 2;
+	cout << "Retrieve 2:\t";
+	cout << myList.remove(dataOut) << endl;
+
+	cout << "viewFront:\t";
+	cout << myList.viewFront(dataOut) << endl;
+
+	cout << "viewRear:\t";
+	cout << myList.viewRear(dataOut) << endl;
+
+	cout << "numValues:\t";
+	cout << myList.getNumValues() << endl;
+
+	cout << "isEmpty:\t";
+	cout << myList.isEmpty() << endl;
+
+	cout << "isFull: \t";
+	cout << myList.isFull() << endl << endl;
+
+}
+

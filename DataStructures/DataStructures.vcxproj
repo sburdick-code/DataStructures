@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LList\OrderedList.h" />
+    <ClInclude Include="LList\UnorderedList.h" />
     <ClInclude Include="Node\Node.h" />
     <ClInclude Include="Queue\Queue.h" />
     <ClInclude Include="Stack\Stack.h" />

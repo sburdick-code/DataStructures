@@ -44,5 +44,8 @@
     <ClInclude Include="LList\OrderedList.h">
       <Filter>Header Files\LList</Filter>
     </ClInclude>
+    <ClInclude Include="LList\UnorderedList.h">
+      <Filter>Header Files\LList</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
