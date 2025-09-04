@@ -25,6 +25,9 @@
     <Filter Include="Header Files\LList">
       <UniqueIdentifier>{2894a993-dfa9-4000-85a9-e9d770e1694a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\DLL">
+      <UniqueIdentifier>{e1a48e21-d32b-400f-8a80-2d120758f2b2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -46,6 +49,9 @@
     </ClInclude>
     <ClInclude Include="LList\UnorderedList.h">
       <Filter>Header Files\LList</Filter>
+    </ClInclude>
+    <ClInclude Include="DLList\DLList.h">
+      <Filter>Header Files\DLL</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

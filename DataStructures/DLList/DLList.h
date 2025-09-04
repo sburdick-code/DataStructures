@@ -85,4 +85,52 @@ bool DLList<TYPE>::insert(const TYPE& dataIn)
 	return success;
 }
 
+template <typename TYPE>
+bool DLList<TYPE>::remove(TYPE& dataOut)
+{
+	bool success = false;
+	Node<TYPE>* pDelete = front;
+
+	while (pDelete && pDelete->data < dataOut)
+		pDelete = pDelete->next;
+
+
+	if (pDelete && pDelete->data == dataOut)
+	{
+		if (pDelete->prev)
+			(pDelete->prev)->next = pDelete->next;
+		else
+			front = pDelete->next;
+
+		if (pDelete->next)
+			(pDelete->next)->prev = pDelete->prev;
+		else
+			rear = pDelete->prev;
+
+		dataOut = pDelete;
+		delet pDelete;
+		success = true;
+	}
+
+	return success;
+}
+
+template <typename TYPE>
+bool DLList<TYPE>::retrieve(TYPE& dataOut) const
+{
+	bool success = false;
+	Node<TYPE>* pTemp = front;
+
+	while (pTemp && pTemp->data < dataOut)
+		pTemp = pTemp->next;
+
+	if (pTemp && pTemp->data == dataOut)
+	{
+		dataOut = pTemp;
+		success = true;
+	}
+
+	return success;
+}
+
 #endif
