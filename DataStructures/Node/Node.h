@@ -24,6 +24,7 @@ Node<TYPE>::Node(const TYPE & d, Node<TYPE>* n, Node<TYPE>* p)
 {
 	data = d;
 	next = n;
+	prev = p;
 }
 
 #endif

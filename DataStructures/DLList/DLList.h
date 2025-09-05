@@ -57,8 +57,9 @@ bool DLList<TYPE>::insert(const TYPE& dataIn)
 	Node<TYPE>* pAfter = front;
 	Node<TYPE>* pNew;
 
-	while ((pAfter) && (pAfter->data < dataIn)
+	while ((pAfter) && (pAfter->data < dataIn))
 		pAfter = pAfter->next;
+
 
 	if (pAfter)
 		pBefore = pAfter->prev;
@@ -70,9 +71,9 @@ bool DLList<TYPE>::insert(const TYPE& dataIn)
 	if (pNew)
 	{
 		if (pBefore)
-			pBefore->next = pnew;
+			pBefore->next = pNew;
 		else
-			front = pNew
+			front = pNew;
 
 		if (pAfter)
 			pAfter->prev = pNew;
@@ -107,8 +108,8 @@ bool DLList<TYPE>::remove(TYPE& dataOut)
 		else
 			rear = pDelete->prev;
 
-		dataOut = pDelete;
-		delet pDelete;
+		dataOut = pDelete->data;
+		delete pDelete;
 		success = true;
 	}
 
@@ -126,11 +127,90 @@ bool DLList<TYPE>::retrieve(TYPE& dataOut) const
 
 	if (pTemp && pTemp->data == dataOut)
 	{
-		dataOut = pTemp;
+		dataOut = pTemp->data;
 		success = true;
 	}
 
 	return success;
+}
+
+template <typename TYPE>
+bool DLList<TYPE>::viewFront(TYPE& dataOut) const
+{
+	bool success = false;
+
+	if (front)
+	{
+		dataOut = front->data;
+		success = true;
+	}
+
+	return success;
+}
+
+template <typename TYPE>
+bool DLList<TYPE>::viewRear(TYPE& dataOut) const
+{
+	bool success = false;
+
+	if (rear)
+	{
+		dataOut = rear->data;
+		success = true;
+	}
+
+	return success;
+}
+
+template <typename TYPE>
+void DLList<TYPE>::display() const
+{
+	Node<TYPE>* pTemp = front;
+
+	while (pTemp)
+	{
+		cout << pTemp->data << ", ";
+		pTemp = pTemp->next;
+	}
+
+	cout << endl;
+}
+
+template <typename TYPE>
+int DLList<TYPE>::getNumValues() const
+{
+	int numValues = 0;
+	Node<TYPE>* pTemp = front;
+
+	while (pTemp)
+	{
+		numValues++;
+		pTemp = pTemp->next;
+	}
+
+	return numValues;
+}
+
+template <typename TYPE>
+bool DLList<TYPE>::isEmpty() const
+{
+	return (!front);
+}
+
+template <typename TYPE>
+bool DLList<TYPE>::isFull() const
+{
+	bool full = true;
+	Node<TYPE>* pTemp;
+	pTemp = new (nothrow) Node<TYPE>;
+
+	if (pTemp)
+	{
+		full = false;
+		delete pTemp;
+	}
+
+	return full;
 }
 
 #endif
