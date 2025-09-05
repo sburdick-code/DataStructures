@@ -14,14 +14,18 @@ void TestQueue();
 void TestOrderedList();
 void TestUnorderedList();
 void TestOrderedDoublyLinkedList();
+void TestNewFunctions_UnorderedList();
 
 int main()
 {
 	// TestStack();
 	// TestQueue();
 	// TestOrderedList();
-	//TestUnorderedList();
-	TestOrderedDoublyLinkedList();
+	// TestUnorderedList();
+	// TestOrderedDoublyLinkedList();
+
+	TestNewFunctions_UnorderedList();
+
 }
 
 void TestStack()
@@ -504,4 +508,33 @@ void TestOrderedDoublyLinkedList()
 	cout << "isFull: \t";
 	cout << myList.isFull() << endl << endl;
 
+}
+
+void TestNewFunctions_UnorderedList()
+{
+	cout << "TESTING UNORDERED LINKED LIST - NEW FUNCTIONS" << endl << endl;
+	cout << boolalpha;
+
+	cout << "Initializing with UnorderedList(const int n)\t n = 3" << endl;
+	UnorderedList<int> myList_01(3);
+	myList_01.display();
+	cout << endl;
+
+	cout << "Initializing with UnorderedList(const int n)\t n = 0" << endl;
+	UnorderedList<int> myList_02(0);
+	cout << "IsEmpty:\t";
+	cout << myList_02.isEmpty() << endl << endl;
+
+	cout << "Initializing with UnorderedList(const int n, const TYPE & initData)\t n = 7, initData = 10" << endl;
+	UnorderedList<int> myList_03(7, 10);
+	myList_03.display();
+	cout << endl;
+
+	cout << "Initializing with UnorderedList(TYPE* pFirst, TYPE* pLast)" << endl;
+	cout << "Created an array: { 10, 20, 60, 40, 50 }\t pFirst = &10, pLast = &50" << endl;
+	int sourceArray[] = { 10, 20, 60, 40, 50 };
+	int* pFirst = &sourceArray[0];
+	int* pLast = &sourceArray[5];
+	UnorderedList<int> myList_04(pFirst, pLast);
+	myList_04.display();
 }

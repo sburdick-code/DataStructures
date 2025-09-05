@@ -11,8 +11,16 @@ class UnorderedList
 		Node<TYPE>* front;
 
 	public:
+		// Constructors
 		UnorderedList();
+		UnorderedList(const int n);  // Construct a list to contain n elements (set to 0)
+		UnorderedList(const int n, const TYPE & initData);  // Construct a list to contain n copies of initData
+		UnorderedList(TYPE* pFirst, TYPE* pLast);  // Construct a list to contain copies of elements in memory locations pFirst up to pLast
+
+		// Destructor
 		~UnorderedList();
+
+		// Class Methods
 		bool insert(const TYPE & dataIn);
 		bool remove(TYPE & dataOut);
 		bool retrieve(TYPE & dataOut) const;
@@ -28,6 +36,63 @@ template <typename TYPE>
 UnorderedList<TYPE>::UnorderedList()
 {
 	front = nullptr;
+}
+
+template <typename TYPE>
+UnorderedList<TYPE>::UnorderedList(const int n)
+{
+	int initData = 0;
+	Node<TYPE>* pAfter = nullptr;
+	Node<TYPE>* pNew;
+
+	for (int i = 0; i < n; i++)
+	{
+		pNew = new (nothrow) Node<TYPE>(initData, pAfter);
+
+		if (pNew)
+			pAfter = pNew;
+	}
+
+	front = pAfter;
+}
+
+template <typename TYPE>
+UnorderedList<TYPE>::UnorderedList(const int n, const TYPE& initData)
+{
+	Node<TYPE>* pAfter = nullptr;
+	Node<TYPE>* pNew;
+
+	for (int i = 0; i < n; i++)
+	{
+		pNew = new (nothrow) Node<TYPE>(initData, pAfter);
+
+		if (pNew)
+			pAfter = pNew;
+	}
+
+	front = pAfter;
+}
+
+template <typename TYPE>
+UnorderedList<TYPE>::UnorderedList(TYPE* pFirst, TYPE* pLast)
+{
+	Node<TYPE>* pNew;
+	Node<TYPE>* pBefore = nullptr;
+
+	for (TYPE* p = pFirst; p != pLast; ++p)
+	{
+		pNew = new (nothrow) Node<TYPE>(*p);
+
+		if (pNew)
+		{
+			if (pBefore)
+				pBefore->next = pNew;
+			else
+				front = pNew;
+
+			pBefore = pNew;
+		}
+	}
 }
 
 template <typename TYPE>
