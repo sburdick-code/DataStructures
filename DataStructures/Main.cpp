@@ -284,7 +284,7 @@ void TestUnorderedList()
 	cout << "TESTING UNORDERED LINKED LIST" << endl << endl;
 	cout << boolalpha;
 
-	cout << "Insert 2: \t";
+	/*cout << "Insert 2: \t";
 	cout << myList.insert(2) << endl;
 
 	cout << "Insert 4: \t";
@@ -300,7 +300,7 @@ void TestUnorderedList()
 	cout << myList.insert(3) << endl;
 
 	cout << "Insert 10:\t";
-	cout << myList.insert(10) << endl;
+	cout << myList.insert(10) << endl;*/
 
 	myList.display();
 	cout << endl;
@@ -519,6 +519,7 @@ void TestNewFunctions_UnorderedList()
 	UnorderedList<int> myList_01(3);
 	myList_01.display();
 	cout << endl;
+	myList_01.~UnorderedList();
 
 	cout << "Initializing with UnorderedList(const int n)\t n = 0" << endl;
 	UnorderedList<int> myList_02(0);
@@ -537,4 +538,34 @@ void TestNewFunctions_UnorderedList()
 	int* pLast = &sourceArray[5];
 	UnorderedList<int> myList_04(pFirst, pLast);
 	myList_04.display();
+	cout << endl;
+
+
+	cout << "push_front 2: \t";
+	cout << myList_01.push_front(2) << endl;
+
+	cout << "push_back 4: \t";
+	cout << myList_01.push_back(4) << endl;
+
+	cout << "push_back 7: \t";
+	cout << myList_01.push_back(7) << endl;
+
+	cout << "push_back 1: \t";
+	cout << myList_01.push_back(1) << endl;
+
+	myList_01.display();
+	cout << endl;
+
+	cout << "Insert 3 at [0]: \t";
+	cout << myList_01.insert(0, 3) << endl;
+
+	myList_01.display();
+	cout << endl;
+
+	cout << "Insert 10 at [4]:\t";
+	cout << myList_01.insert(4, 10) << endl;
+
+	myList_01.display();
+	cout << endl;
+
 }

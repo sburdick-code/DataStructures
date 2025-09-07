@@ -21,7 +21,9 @@ class UnorderedList
 		~UnorderedList();
 
 		// Class Methods
-		bool insert(const TYPE & dataIn);
+		bool push_front(const TYPE & dataIn);
+		bool push_back(const TYPE & dataIn);
+		bool insert(const int pos, const TYPE & dataIn);
 		bool remove(TYPE & dataOut);
 		bool retrieve(TYPE & dataOut) const;
 		bool viewFront(TYPE & dataOut) const;
@@ -109,7 +111,23 @@ UnorderedList<TYPE>::~UnorderedList()
 }
 
 template <typename TYPE>
-bool UnorderedList<TYPE>::insert(const TYPE& dataIn)
+bool UnorderedList<TYPE>::push_front(const TYPE& dataIn)
+{
+	bool success = false;
+	Node<TYPE>* pNew;
+	pNew = new (nothrow) Node<TYPE>(dataIn, front);
+
+	if (pNew)
+	{
+		front = pNew;
+		success = true;
+	}
+
+	return success;
+}
+
+template <typename TYPE>
+bool UnorderedList<TYPE>::push_back(const TYPE& dataIn)
 {
 	bool success = false;
 	Node<TYPE>* pAfter = front;
@@ -128,6 +146,35 @@ bool UnorderedList<TYPE>::insert(const TYPE& dataIn)
 			front = pNew;
 		else
 			pAfter->next = pNew;
+
+		success = true;
+	}
+
+	return success;
+}
+
+template <typename TYPE>
+bool UnorderedList<TYPE>::insert(const int pos, const TYPE& dataIn)
+{
+	bool success = false;
+	Node<TYPE>* pBefore = nullptr;
+	Node<TYPE>* pAfter = front;
+	Node<TYPE>* pNew;
+
+	for (int i = 0; i < pos && pAfter; i++)
+	{
+		pBefore = pAfter;
+		pAfter = pAfter->next;
+	}
+
+	pNew = new (nothrow) Node<TYPE>(dataIn, pAfter);
+
+	if (pNew)
+	{
+		if (pBefore)
+			pBefore->next = pNew;
+		else
+			front = pNew;
 
 		success = true;
 	}
