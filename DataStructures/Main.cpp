@@ -670,4 +670,20 @@ void TestBubblesort()
 		cout << myArray_03[i] << ", ";
 	cout << endl << endl;
 
+
+	length = 3;
+	string myArray_04[] = { "Tom", "Joe", "Annie"};
+
+	cout << "Before Bubblesort:\n";
+	for (int i = 0; i < length; i++)
+		cout << myArray_04[i] << ", ";
+	cout << endl;
+
+	bubblesortArray(myArray_04, length);
+
+	cout << "After Bubblesort:\n";
+	for (int i = 0; i < length; i++)
+		cout << myArray_04[i] << ", ";
+	cout << endl << endl;
+
 }
