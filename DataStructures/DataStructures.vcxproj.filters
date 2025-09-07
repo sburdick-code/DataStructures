@@ -53,5 +53,8 @@
     <ClInclude Include="DLList\DLList.h">
       <Filter>Header Files\DLL</Filter>
     </ClInclude>
+    <ClInclude Include="Algorithms\Bubblesort.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

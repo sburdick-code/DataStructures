@@ -8,6 +8,7 @@ using namespace std;
 #include "LList/OrderedList.h"
 #include "LList/UnorderedList.h"
 #include "DLList/DLList.h"
+#include "Algorithms/Bubblesort.h"
 
 void TestStack();
 void TestQueue();
@@ -15,6 +16,8 @@ void TestOrderedList();
 void TestUnorderedList();
 void TestOrderedDoublyLinkedList();
 void TestNewFunctions_UnorderedList();
+
+void TestBubblesort();
 
 int main()
 {
@@ -24,8 +27,9 @@ int main()
 	// TestUnorderedList();
 	// TestOrderedDoublyLinkedList();
 
-	TestNewFunctions_UnorderedList();
-
+	// TestNewFunctions_UnorderedList();
+	
+	TestBubblesort();
 }
 
 void TestStack()
@@ -599,5 +603,39 @@ void TestNewFunctions_UnorderedList()
 	cout << "Merging into previous list: \t";
 	cout << myList_01.merge(myList_05) << endl;
 	myList_01.display();
+	cout << endl;
+}
+
+void TestBubblesort()
+{
+	int length = 2;
+	int myArray_00[] = { 3, 2, };
+
+	cout << "Before Bubblesort:\n";
+	for (int i = 0; i < length; i++)
+		cout << myArray_00[i] << ", ";
+	cout << endl;
+
+	bubblesortArray(myArray_00, length);
+
+	cout << "After Bubblesort:\n";
+	for (int i = 0; i < length; i++)
+		cout << myArray_00[i] << ", ";
+	cout << endl << endl;
+
+
+	length = 5;
+	int myArray_01[] = { 3, 2, 9, 7, 4};
+
+	cout << "Before Bubblesort:\n";
+	for (int i = 0; i < length; i++)
+		cout << myArray_01[i] << ", ";
+	cout << endl;
+
+	bubblesortArray(myArray_01, length);
+
+	cout << "After Bubblesort:\n";
+	for (int i = 0; i < length; i++)
+		cout << myArray_01[i] << ", ";
 	cout << endl;
 }
