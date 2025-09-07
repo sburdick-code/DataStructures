@@ -512,6 +512,8 @@ void TestOrderedDoublyLinkedList()
 
 void TestNewFunctions_UnorderedList()
 {
+	int dataOut;
+
 	cout << "TESTING UNORDERED LINKED LIST - NEW FUNCTIONS" << endl << endl;
 	cout << boolalpha;
 
@@ -541,17 +543,17 @@ void TestNewFunctions_UnorderedList()
 	cout << endl;
 
 
-	cout << "push_front 2: \t";
-	cout << myList_01.push_front(2) << endl;
+	cout << "pushFront 2: \t";
+	cout << myList_01.pushFront(2) << endl;
 
-	cout << "push_back 4: \t";
-	cout << myList_01.push_back(4) << endl;
+	cout << "pushBack 4: \t";
+	cout << myList_01.pushBack(4) << endl;
 
-	cout << "push_back 7: \t";
-	cout << myList_01.push_back(7) << endl;
+	cout << "pushBack 7: \t";
+	cout << myList_01.pushBack(7) << endl;
 
-	cout << "push_back 1: \t";
-	cout << myList_01.push_back(1) << endl;
+	cout << "pushBack 1: \t";
+	cout << myList_01.pushBack(1) << endl;
 
 	myList_01.display();
 	cout << endl;
@@ -568,4 +570,34 @@ void TestNewFunctions_UnorderedList()
 	myList_01.display();
 	cout << endl;
 
+
+	cout << "popFront: \t";
+	cout << myList_01.popFront(dataOut) << endl;
+	cout << dataOut << endl;
+
+	cout << "popBack: \t";
+	cout << myList_01.popBack(dataOut) << endl;
+	cout << dataOut << endl;
+
+	myList_01.display();
+	cout << endl;
+
+	cout << "popBack: \t";
+	cout << myList_01.popBack(dataOut) << endl;
+	cout << dataOut << endl;
+
+	myList_01.display();
+	cout << endl;
+
+	
+	UnorderedList<int> myList_05(3);
+	cout << "Initialized a new list of 3 zeroes" << endl;
+	myList_05.display();
+	cout << endl;
+	
+
+	cout << "Merging into previous list: \t";
+	cout << myList_01.merge(myList_05) << endl;
+	myList_01.display();
+	cout << endl;
 }

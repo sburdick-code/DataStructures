@@ -21,9 +21,11 @@ class UnorderedList
 		~UnorderedList();
 
 		// Class Methods
-		bool push_front(const TYPE & dataIn);
-		bool push_back(const TYPE & dataIn);
+		bool pushFront(const TYPE & dataIn);
+		bool pushBack(const TYPE & dataIn);
 		bool insert(const int pos, const TYPE & dataIn);
+		bool popFront(TYPE & dataOut);
+		bool popBack(TYPE & dataOut);
 		bool remove(TYPE & dataOut);
 		bool retrieve(TYPE & dataOut) const;
 		bool viewFront(TYPE & dataOut) const;
@@ -32,6 +34,7 @@ class UnorderedList
 		int getNumValues() const;
 		bool isEmpty() const;
 		bool isFull() const;
+		bool merge(UnorderedList & mergeList);
 };
 
 template <typename TYPE>
@@ -111,7 +114,7 @@ UnorderedList<TYPE>::~UnorderedList()
 }
 
 template <typename TYPE>
-bool UnorderedList<TYPE>::push_front(const TYPE& dataIn)
+bool UnorderedList<TYPE>::pushFront(const TYPE& dataIn)
 {
 	bool success = false;
 	Node<TYPE>* pNew;
@@ -127,7 +130,7 @@ bool UnorderedList<TYPE>::push_front(const TYPE& dataIn)
 }
 
 template <typename TYPE>
-bool UnorderedList<TYPE>::push_back(const TYPE& dataIn)
+bool UnorderedList<TYPE>::pushBack(const TYPE& dataIn)
 {
 	bool success = false;
 	Node<TYPE>* pAfter = front;
@@ -176,6 +179,52 @@ bool UnorderedList<TYPE>::insert(const int pos, const TYPE& dataIn)
 		else
 			front = pNew;
 
+		success = true;
+	}
+
+	return success;
+}
+
+template <typename TYPE>
+bool UnorderedList<TYPE>::popFront(TYPE& dataOut)
+{
+	bool success = false;
+	Node<TYPE>* pDelete = front;
+	
+	if (pDelete)
+	{
+		dataOut = front->data;
+		front = front->next;
+		delete pDelete;
+		success = true;
+	}
+
+	return success;
+}
+
+template <typename TYPE>
+bool UnorderedList<TYPE>::popBack(TYPE& dataOut)
+{
+	bool success = false;
+	Node<TYPE>* pBefore = nullptr;
+	Node<TYPE>* pDelete = front;
+
+	while (pDelete && pDelete->next)
+	{
+		pBefore = pDelete;
+		pDelete = pDelete->next;
+	}
+
+	if (pDelete)
+	{
+		dataOut = pDelete->data;
+
+		if (pBefore)
+			pBefore->next = nullptr;
+		else
+			front = nullptr;
+
+		delete pDelete;
 		success = true;
 	}
 
@@ -314,6 +363,27 @@ bool UnorderedList<TYPE>::isFull() const
 	}
 
 	return full;
+}
+
+template <typename TYPE>
+bool UnorderedList<TYPE>::merge(UnorderedList& mergeList)
+{
+	// TODO: Lets give this one more go and make it more efficient!
+
+	bool success = false;
+	int numElements = mergeList.getNumValues();
+	TYPE data;
+
+	for (int i = 0; i < numElements; i++)
+	{
+		if (mergeList.popFront(data))
+			if (!this->pushBack(data))
+				return success;
+	}
+
+	success = mergeList.isEmpty();
+
+	return success;
 }
 
 #endif
