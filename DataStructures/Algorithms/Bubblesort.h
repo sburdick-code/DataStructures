@@ -11,7 +11,7 @@ void bubblesortArray(TYPE arrayIn[], const int length)
 	{
 		for (int i = length-1; i > 0; i--)
 		{
-			for (int j = 0; j < i; ++j)
+			for (int j = 0; j < i; j++)
 			{
 				if (arrayIn[j] > arrayIn[j+1])
 				{

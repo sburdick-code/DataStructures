@@ -28,6 +28,9 @@
     <Filter Include="Header Files\DLL">
       <UniqueIdentifier>{e1a48e21-d32b-400f-8a80-2d120758f2b2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Algorithms">
+      <UniqueIdentifier>{bc640d12-f276-4b91-8ff5-22c7d49e403d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -54,7 +57,7 @@
       <Filter>Header Files\DLL</Filter>
     </ClInclude>
     <ClInclude Include="Algorithms\Bubblesort.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\Algorithms</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

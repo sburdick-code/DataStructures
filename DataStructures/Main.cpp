@@ -637,5 +637,37 @@ void TestBubblesort()
 	cout << "After Bubblesort:\n";
 	for (int i = 0; i < length; i++)
 		cout << myArray_01[i] << ", ";
+	cout << endl << endl;
+
+
+	length = 6;
+	double myArray_02[] = { 2.5, .7, 9.7, 6.5, 3.4, 1.8 };
+
+	cout << "Before Bubblesort:\n";
+	for (int i = 0; i < length; i++)
+		cout << myArray_02[i] << ", ";
 	cout << endl;
+
+	bubblesortArray(myArray_02, length);
+
+	cout << "After Bubblesort:\n";
+	for (int i = 0; i < length; i++)
+		cout << myArray_02[i] << ", ";
+	cout << endl << endl;
+
+	length = 1;
+	double myArray_03[] = { 3.1 };
+
+	cout << "Before Bubblesort:\n";
+	for (int i = 0; i < length; i++)
+		cout << myArray_03[i] << ", ";
+	cout << endl;
+
+	bubblesortArray(myArray_03, length);
+
+	cout << "After Bubblesort:\n";
+	for (int i = 0; i < length; i++)
+		cout << myArray_03[i] << ", ";
+	cout << endl << endl;
+
 }
