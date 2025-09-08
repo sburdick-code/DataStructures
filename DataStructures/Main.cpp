@@ -27,9 +27,9 @@ int main()
 	// TestUnorderedList();
 	// TestOrderedDoublyLinkedList();
 
-	// TestNewFunctions_UnorderedList();
+	TestNewFunctions_UnorderedList();
 	
-	TestBubblesort();
+	// TestBubblesort();
 }
 
 void TestStack()
@@ -541,7 +541,7 @@ void TestNewFunctions_UnorderedList()
 	cout << "Created an array: { 10, 20, 60, 40, 50 }\t pFirst = &10, pLast = &50" << endl;
 	int sourceArray[] = { 10, 20, 60, 40, 50 };
 	int* pFirst = &sourceArray[0];
-	int* pLast = &sourceArray[5];
+	int* pLast = &sourceArray[4];
 	UnorderedList<int> myList_04(pFirst, pLast);
 	myList_04.display();
 	cout << endl;
@@ -593,14 +593,14 @@ void TestNewFunctions_UnorderedList()
 	myList_01.display();
 	cout << endl;
 
-	
-	UnorderedList<int> myList_05(3);
-	cout << "Initialized a new list of 3 zeroes" << endl;
+	int myArray[] = { 1, 2, 3 };
+	UnorderedList<int> myList_05(&myArray[0], &myArray[2]);
+	cout << "Initialized a new list:" << endl;
 	myList_05.display();
 	cout << endl;
 	
 
-	cout << "Merging into previous list: \t";
+	cout << "Appending into previous list: \t";
 	cout << myList_01.merge(myList_05) << endl;
 	myList_01.display();
 	cout << endl;

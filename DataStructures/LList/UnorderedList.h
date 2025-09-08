@@ -84,7 +84,7 @@ UnorderedList<TYPE>::UnorderedList(TYPE* pFirst, TYPE* pLast)
 	Node<TYPE>* pNew;
 	Node<TYPE>* pBefore = nullptr;
 
-	for (TYPE* p = pFirst; p != pLast; ++p)
+	for (TYPE* p = pFirst; p <= pLast; ++p)
 	{
 		pNew = new (nothrow) Node<TYPE>(*p);
 
@@ -368,20 +368,37 @@ bool UnorderedList<TYPE>::isFull() const
 template <typename TYPE>
 bool UnorderedList<TYPE>::merge(UnorderedList& mergeList)
 {
-	// TODO: Lets give this one more go and make it more efficient!
-
 	bool success = false;
 	int numElements = mergeList.getNumValues();
+	Node<TYPE>* pTemp = front;
+	Node<TYPE>* pNew;
 	TYPE data;
+
+	while (pTemp && pTemp->next)
+	{
+		pTemp = pTemp->next;
+	}
 
 	for (int i = 0; i < numElements; i++)
 	{
 		if (mergeList.popFront(data))
-			if (!this->pushBack(data))
-				return success;
-	}
+		{
+			pNew = new (nothrow) Node<TYPE>(data);
 
-	success = mergeList.isEmpty();
+			if (pNew)
+			{
+				if (pTemp)
+					pTemp->next = pNew;
+				else
+					front = pNew;
+
+				pTemp = pNew;
+				success = true;
+			}
+			else
+				success = false;  // TODO: may be good to add a way to save the mergeList, this way if an error occurs it isn't destructive to the data.
+		}
+	}
 
 	return success;
 }
