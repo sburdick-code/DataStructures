@@ -59,5 +59,8 @@
     <ClInclude Include="Algorithms\Bubblesort.h">
       <Filter>Header Files\Algorithms</Filter>
     </ClInclude>
+    <ClInclude Include="LList\CircularList.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

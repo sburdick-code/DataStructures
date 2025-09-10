@@ -8,7 +8,10 @@ using namespace std;
 #include "LList/OrderedList.h"
 #include "LList/UnorderedList.h"
 #include "DLList/DLList.h"
+#include "LList/CircularList.h"
+
 #include "Algorithms/Bubblesort.h"
+
 
 void TestStack();
 void TestQueue();
@@ -16,6 +19,7 @@ void TestOrderedList();
 void TestUnorderedList();
 void TestOrderedDoublyLinkedList();
 void TestNewFunctions_UnorderedList();
+void TestCircularList();
 
 void TestBubblesort();
 
@@ -26,8 +30,9 @@ int main()
 	// TestOrderedList();
 	// TestUnorderedList();
 	// TestOrderedDoublyLinkedList();
+	TestCircularList();
 
-	TestNewFunctions_UnorderedList();
+	//TestNewFunctions_UnorderedList();
 	
 	// TestBubblesort();
 }
@@ -685,5 +690,96 @@ void TestBubblesort()
 	for (int i = 0; i < length; i++)
 		cout << myArray_04[i] << ", ";
 	cout << endl << endl;
+
+}
+
+void TestCircularList()
+{
+	cout << "TESTING CIRCULARLY LINKED LIST" << endl << endl;
+	cout << boolalpha;
+
+	CircularList<int> myList;
+	int dataOut;
+
+	cout << "pushFrnt 2: \t";
+	cout << myList.pushFront(2) << endl;
+
+	cout << "pushBack 4: \t";
+	cout << myList.pushBack(4) << endl;
+
+	cout << "pushBack 7: \t";
+	cout << myList.pushBack(7) << endl;
+
+	cout << "pushBack 1: \t";
+	cout << myList.pushBack(1) << endl;
+
+	myList.display();
+	cout << endl;
+
+	
+
+
+	cout << "Insert 3 at [0]: \t";
+	cout << myList.insert(0, 3) << endl;
+
+	myList.display();
+	cout << endl;
+
+	cout << "Insert 10 at [4]:\t";
+	cout << myList.insert(4, 10) << endl;
+
+	myList.display();
+	cout << endl;
+
+	cout << "Insert 8 at [50]:\t";
+	cout << myList.insert(50, 8) << endl;
+
+	myList.display();
+	cout << endl;
+
+	cout << "NumValues:\t";
+	cout << myList.getNumValues() << endl << endl;
+
+
+	dataOut = 7;
+	cout << "Remove 7:\t";
+	cout << myList.remove(dataOut) << endl;
+
+	dataOut = 8;
+	cout << "Remove 8:\t";
+	cout << myList.remove(dataOut) << endl;
+
+	dataOut = 3;
+	cout << "Remove 3:\t";
+	cout << myList.remove(dataOut) << endl;
+
+	dataOut = 50;
+	cout << "Remove 50:\t";
+	cout << myList.remove(dataOut) << endl;
+
+	myList.display();
+	cout << endl;
+
+	cout << "NumValues:\t";
+	cout << myList.getNumValues() << endl << endl;
+
+
+	cout << "isEmpty:\t";
+	cout << myList.isEmpty() << endl;
+
+	cout << "isFull: \t";
+	cout << myList.isFull() << endl << endl;
+
+
+	cout << "Emptying Circular LList" << endl;
+	myList.~CircularList();
+
+	cout << "isEmpty:\t";
+	cout << myList.isEmpty() << endl;
+
+	cout << "isFull: \t";
+	cout << myList.isFull() << endl << endl;
+
+	
 
 }
