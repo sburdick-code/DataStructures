@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClInclude Include="Algorithms\Bubblesort.h" />
     <ClInclude Include="DLList\DLList.h" />
+    <ClInclude Include="HashTable\LPHashTable.h" />
     <ClInclude Include="LList\CircularList.h" />
     <ClInclude Include="LList\OrderedList.h" />
     <ClInclude Include="LList\UnorderedList.h" />

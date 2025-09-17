@@ -25,11 +25,14 @@
     <Filter Include="Header Files\LList">
       <UniqueIdentifier>{2894a993-dfa9-4000-85a9-e9d770e1694a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\DLL">
-      <UniqueIdentifier>{e1a48e21-d32b-400f-8a80-2d120758f2b2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Algorithms">
       <UniqueIdentifier>{bc640d12-f276-4b91-8ff5-22c7d49e403d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\HashTable">
+      <UniqueIdentifier>{ac012af7-e71c-4c95-a8e4-4477a40f13c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DLList">
+      <UniqueIdentifier>{e1a48e21-d32b-400f-8a80-2d120758f2b2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -54,13 +57,16 @@
       <Filter>Header Files\LList</Filter>
     </ClInclude>
     <ClInclude Include="DLList\DLList.h">
-      <Filter>Header Files\DLL</Filter>
+      <Filter>Header Files\DLList</Filter>
     </ClInclude>
     <ClInclude Include="Algorithms\Bubblesort.h">
       <Filter>Header Files\Algorithms</Filter>
     </ClInclude>
     <ClInclude Include="LList\CircularList.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HashTable\LPHashTable.h">
+      <Filter>Header Files\HashTable</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
