@@ -19,7 +19,7 @@ class LPHashTable
 		void display();
 
 	private:
-		int hashFunction(const int key) const;
+		int hashFunction(const TYPE& key) const;
 };
 
 template <typename TYPE>
@@ -116,7 +116,7 @@ void LPHashTable<TYPE>::display()
 }
 
 template <typename TYPE>
-int LPHashTable<TYPE>::hashFunction(const int key) const
+int LPHashTable<TYPE>::hashFunction(const TYPE& key) const
 {
 	return (key % capacity);
 }
