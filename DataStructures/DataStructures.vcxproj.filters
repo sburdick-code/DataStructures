@@ -68,5 +68,8 @@
     <ClInclude Include="HashTable\LPHashTable.h">
       <Filter>Header Files\HashTable</Filter>
     </ClInclude>
+    <ClInclude Include="HashTable\CHashTable.h">
+      <Filter>Header Files\HashTable</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

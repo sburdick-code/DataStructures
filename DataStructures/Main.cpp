@@ -10,6 +10,7 @@ using namespace std;
 #include "DLList/DLList.h"
 #include "LList/CircularList.h"
 #include "HashTable/LPHashTable.h"
+#include "HashTable/CHashTable.h"
 
 #include "Algorithms/Bubblesort.h"
 
@@ -38,7 +39,63 @@ int main()
 
 	// TestBubblesort();
 
-	TestLinearProbingHashTable();
+	//TestLinearProbingHashTable
+
+
+	cout << "TESTING CHAINED HASH TABLE" << endl << endl;
+	cout << boolalpha;
+
+	int dataOut;
+	CHashTable<int> myHash(25);
+
+	cout << "insert 1:\t" << myHash.insert(1) << endl;
+	cout << "insert 3:\t" << myHash.insert(3) << endl;
+	cout << "insert 10:\t" << myHash.insert(10) << endl;
+	cout << "insert 24:\t";
+	cout << myHash.insert(24) << endl;
+	cout << "insert 25:\t";
+	cout << myHash.insert(25) << endl;
+	myHash.display();
+
+	cout << "insert 35:\t";
+	cout << myHash.insert(35) << endl;
+	cout << "insert 26:\t";
+	cout << myHash.insert(26) << endl;
+	cout << "insert 50:\t";
+	cout << myHash.insert(50) << endl;
+	myHash.display();
+
+	dataOut = 10;
+	cout << "retrieve 10:\t";
+	cout << myHash.retrieve(dataOut) << endl;
+
+	dataOut = 35;
+	cout << "retrieve 35:\t";
+	cout << myHash.retrieve(dataOut) << endl;
+
+	dataOut = 200;
+	cout << "retrieve 200:\t";
+	cout << myHash.retrieve(dataOut) << endl;
+
+	myHash.display();
+
+	dataOut = 10;
+	cout << "remove 10:\t";
+	cout << myHash.remove(dataOut) << endl;
+
+	dataOut = 35;
+	cout << "remove 35:\t";
+	cout << myHash.remove(dataOut) << endl;
+
+	dataOut = 200;
+	cout << "remove 200:\t";
+	cout << myHash.remove(dataOut) << endl;
+
+	dataOut = 50;
+	cout << "remove 50:\t";
+	cout << myHash.remove(dataOut) << endl;
+
+	myHash.display();
 }
 
 void TestStack()
