@@ -62,11 +62,11 @@
     <ClInclude Include="Algorithms\Bubblesort.h">
       <Filter>Header Files\Algorithms</Filter>
     </ClInclude>
-    <ClInclude Include="LList\CircularList.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="HashTable\LPHashTable.h">
       <Filter>Header Files\HashTable</Filter>
+    </ClInclude>
+    <ClInclude Include="LList\CircularList.h">
+      <Filter>Header Files\LList</Filter>
     </ClInclude>
     <ClInclude Include="HashTable\CHashTable.h">
       <Filter>Header Files\HashTable</Filter>

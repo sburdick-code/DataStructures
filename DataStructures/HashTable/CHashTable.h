@@ -20,7 +20,8 @@ public:
 	void display();
 
 private:
-	int hashFunction(const TYPE& data) const;
+	int hashFunction(const int& data) const;
+	int hashFunction(const string& data) const;
 
 };
 
@@ -87,9 +88,16 @@ void CHashTable<TYPE>::display()
 }
 
 template <typename TYPE>
-int CHashTable<TYPE>::hashFunction(const TYPE& data) const
+int CHashTable<TYPE>::hashFunction(const int& data) const
 {
 	return (data % capacity);
+}
+
+template <typename TYPE>
+int CHashTable<TYPE>::hashFunction(const string& data) const
+{
+	// Subtracting the first char's hex by 97 to make 'a' = 0
+	return ((tolower(data[0]) - 97) % capacity);
 }
 
 #endif
