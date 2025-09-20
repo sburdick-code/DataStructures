@@ -23,6 +23,7 @@ void TestOrderedDoublyLinkedList();
 void TestNewFunctions_UnorderedList();
 void TestCircularList();
 void TestLinearProbingHashTable();
+void TestChainedHashTable();
 
 void TestBubblesort();
 
@@ -34,68 +35,12 @@ int main()
 	// TestUnorderedList();
 	// TestOrderedDoublyLinkedList();
 	// TestCircularList();
-
 	//TestNewFunctions_UnorderedList();
+	//TestLinearProbingHashTable
+	TestChainedHashTable();
 
 	// TestBubblesort();
 
-	//TestLinearProbingHashTable
-
-
-	cout << "TESTING CHAINED HASH TABLE" << endl << endl;
-	cout << boolalpha;
-
-	int dataOut;
-	CHashTable<int> myHash(25);
-
-	cout << "insert 1:\t" << myHash.insert(1) << endl;
-	cout << "insert 3:\t" << myHash.insert(3) << endl;
-	cout << "insert 10:\t" << myHash.insert(10) << endl;
-	cout << "insert 24:\t";
-	cout << myHash.insert(24) << endl;
-	cout << "insert 25:\t";
-	cout << myHash.insert(25) << endl;
-	myHash.display();
-
-	cout << "insert 35:\t";
-	cout << myHash.insert(35) << endl;
-	cout << "insert 26:\t";
-	cout << myHash.insert(26) << endl;
-	cout << "insert 50:\t";
-	cout << myHash.insert(50) << endl;
-	myHash.display();
-
-	dataOut = 10;
-	cout << "retrieve 10:\t";
-	cout << myHash.retrieve(dataOut) << endl;
-
-	dataOut = 35;
-	cout << "retrieve 35:\t";
-	cout << myHash.retrieve(dataOut) << endl;
-
-	dataOut = 200;
-	cout << "retrieve 200:\t";
-	cout << myHash.retrieve(dataOut) << endl;
-
-	myHash.display();
-
-	dataOut = 10;
-	cout << "remove 10:\t";
-	cout << myHash.remove(dataOut) << endl;
-
-	dataOut = 35;
-	cout << "remove 35:\t";
-	cout << myHash.remove(dataOut) << endl;
-
-	dataOut = 200;
-	cout << "remove 200:\t";
-	cout << myHash.remove(dataOut) << endl;
-
-	dataOut = 50;
-	cout << "remove 50:\t";
-	cout << myHash.remove(dataOut) << endl;
-
-	myHash.display();
 }
 
 void TestStack()
@@ -918,4 +863,102 @@ void TestLinearProbingHashTable()
 
 
 
+}
+
+void TestChainedHashTable()
+{
+	cout << "TESTING CHAINED HASH TABLE" << endl << endl;
+	cout << boolalpha;
+
+	int dataOut;
+	CHashTable<int> myHash(25);
+
+	cout << "insert 1:\t" << myHash.insert(1) << endl;
+	cout << "insert 3:\t" << myHash.insert(3) << endl;
+	cout << "insert 10:\t" << myHash.insert(10) << endl;
+	cout << "insert 24:\t";
+	cout << myHash.insert(24) << endl;
+	cout << "insert 25:\t";
+	cout << myHash.insert(25) << endl;
+	myHash.display();
+
+	cout << "insert 35:\t";
+	cout << myHash.insert(35) << endl;
+	cout << "insert 26:\t";
+	cout << myHash.insert(26) << endl;
+	cout << "insert 50:\t";
+	cout << myHash.insert(50) << endl;
+	myHash.display();
+
+	dataOut = 10;
+	cout << "retrieve 10:\t";
+	cout << myHash.retrieve(dataOut) << endl;
+
+	dataOut = 35;
+	cout << "retrieve 35:\t";
+	cout << myHash.retrieve(dataOut) << endl;
+
+	dataOut = 200;
+	cout << "retrieve 200:\t";
+	cout << myHash.retrieve(dataOut) << endl;
+
+	myHash.display();
+
+	dataOut = 10;
+	cout << "remove 10:\t";
+	cout << myHash.remove(dataOut) << endl;
+
+	dataOut = 35;
+	cout << "remove 35:\t";
+	cout << myHash.remove(dataOut) << endl;
+
+	dataOut = 200;
+	cout << "remove 200:\t";
+	cout << myHash.remove(dataOut) << endl;
+
+	dataOut = 50;
+	cout << "remove 50:\t";
+	cout << myHash.remove(dataOut) << endl;
+
+	myHash.display();
+
+
+	// String Hash Table
+	cout << "Initializing string hash table:\n";
+	string stringOut;
+	CHashTable<string> stringHash(26);
+
+	cout << "insert Adam:\t" << stringHash.insert("Adam") << endl;
+	cout << "insert Ben:\t" << stringHash.insert("Ben") << endl;
+	cout << "insert Jenny:\t" << stringHash.insert("Jenny") << endl;
+	cout << "insert Rick:\t" << stringHash.insert("Rick") << endl;
+	cout << "insert Zoe:\t" << stringHash.insert("Zoe") << endl;
+	stringHash.display();
+
+	cout << "insert Ann:\t" << stringHash.insert("Ann") << endl;
+	cout << "insert Joe:\t" << stringHash.insert("Joe") << endl;
+	cout << "insert Tom:\t" << stringHash.insert("Tom") << endl;
+	stringHash.display();
+
+	stringOut = "Adam";
+	cout << "retrieve Adam:\t" << stringHash.retrieve(stringOut) << endl;
+	stringOut = "Ann";
+	cout << "retrieve Ann:\t" << stringHash.retrieve(stringOut) << endl;
+	stringOut = "Will";
+	cout << "retrieve Will:\t" << stringHash.retrieve(stringOut) << endl;
+	stringOut = "Rick";
+	cout << "retrieve Rick:\t" << stringHash.retrieve(stringOut) << endl;
+
+	stringHash.display();
+
+	stringOut = "Joe";
+	cout << "remove Joe:   \t" << stringHash.remove(stringOut) << endl;
+	stringOut = "Ann";
+	cout << "remove Ann:   \t" << stringHash.remove(stringOut) << endl;
+	stringOut = "Hugo";
+	cout << "remove Hugo:   \t" << stringHash.remove(stringOut) << endl;
+	stringOut = "Adam";
+	cout << "remove Adam:   \t" << stringHash.remove(stringOut) << endl;
+
+	stringHash.display();
 }
