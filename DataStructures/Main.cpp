@@ -901,4 +901,21 @@ void TestLinearProbingHashTable()
 	cout << myHash.remove(dataOut) << endl;
 
 	myHash.display();
+
+	cout << endl << "Initializing String Hash" << endl;
+	CHashTable<string> strHash();
+	string data;
+
+	cout << "insert Adams, Joe:\t" << myHash.insert(int("A")) << endl;
+	cout << "insert Biggs, Jen:\t" << myHash.insert(3) << endl;
+	cout << "insert Ricco, Tom:\t" << myHash.insert(10) << endl;
+	cout << "insert Jules, Ann:\t";
+	cout << myHash.insert(24) << endl;
+	cout << "insert 25:\t";
+	cout << myHash.insert(25) << endl;
+	myHash.display();
+
+
+
+
 }
