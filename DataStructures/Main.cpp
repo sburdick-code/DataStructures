@@ -1,6 +1,14 @@
+/*
+ * This file is part of DataStructures.sln.
+ * Developed for educational purposes.
+ * This program is free software: you can redistribute it and/or modify it.
+ *
+ * This program is used to test the data structures created.
+ *
+ */
+
 #include <iostream>
 #include <new>
-
 using namespace std;
 
 #include "Stack/Stack.h"
@@ -43,11 +51,15 @@ int main()
 
 }
 
+/////////////////////////////////////////////////////////////////////////
+// DATA STRUCTURES
+/////////////////////////////////////////////////////////////////////////
+
+/**
+ * Smoke test my Stack data structure.
+ */
 void TestStack()
 {
-	/// <summary>
-	/// A function to stress test my Stack Data Structure
-	/// </summary>
 	
 	AStack <int> myStack;
 	int dataOut;
@@ -87,12 +99,11 @@ void TestStack()
 	cout << "isEmpty:   \t" << myStack.isEmpty() << endl;
 }
 
+/**
+ * Smoke test my Queue data structure.
+ */
 void TestQueue()
 {
-	/// <summary>
-	/// A function to stress test my queue data structure
-	/// </summary>
-	
 	Queue<int> myQueue;
 	int dataOut;
 
@@ -168,11 +179,11 @@ void TestQueue()
 	
 }
 
+/**
+ * Smoke test my ordered Linked List data structure.
+ */
 void TestOrderedList()
 {
-	/// <summary>
-	/// A function to stress test my ordered Linked List data structure
-	/// </summary>
 
 	OrderedList<int> myList;
 	int dataOut;
@@ -287,11 +298,11 @@ void TestOrderedList()
 
 }
 
+/**
+ * Smoke test my unordered Linked List data structure.
+ */
 void TestUnorderedList()
 {
-	/// <summary>
-	/// A function to stress test my Unordered Linked List data structure
-	/// </summary>
 
 	UnorderedList<int> myList;
 	int dataOut;
@@ -406,6 +417,9 @@ void TestUnorderedList()
 
 }
 
+/**
+ * Smoke test my ordered Doubly Linked List data structure.
+ */
 void TestOrderedDoublyLinkedList()
 {
 	/// <summary>
@@ -525,6 +539,9 @@ void TestOrderedDoublyLinkedList()
 
 }
 
+/**
+ * Smoke test the extended functions added to my Unordered Linked List.
+ */
 void TestNewFunctions_UnorderedList()
 {
 	int dataOut;
@@ -617,88 +634,9 @@ void TestNewFunctions_UnorderedList()
 	cout << endl;
 }
 
-void TestBubblesort()
-{
-	int length = 2;
-	int myArray_00[] = { 3, 2, };
-
-	cout << "Before Bubblesort:\n";
-	for (int i = 0; i < length; i++)
-		cout << myArray_00[i] << ", ";
-	cout << endl;
-
-	bubblesortArray(myArray_00, length);
-
-	cout << "After Bubblesort:\n";
-	for (int i = 0; i < length; i++)
-		cout << myArray_00[i] << ", ";
-	cout << endl << endl;
-
-
-	length = 5;
-	int myArray_01[] = { 3, 2, 9, 7, 4};
-
-	cout << "Before Bubblesort:\n";
-	for (int i = 0; i < length; i++)
-		cout << myArray_01[i] << ", ";
-	cout << endl;
-
-	bubblesortArray(myArray_01, length);
-
-	cout << "After Bubblesort:\n";
-	for (int i = 0; i < length; i++)
-		cout << myArray_01[i] << ", ";
-	cout << endl << endl;
-
-
-	length = 6;
-	double myArray_02[] = { 2.5, .7, 9.7, 6.5, 3.4, 1.8 };
-
-	cout << "Before Bubblesort:\n";
-	for (int i = 0; i < length; i++)
-		cout << myArray_02[i] << ", ";
-	cout << endl;
-
-	bubblesortArray(myArray_02, length);
-
-	cout << "After Bubblesort:\n";
-	for (int i = 0; i < length; i++)
-		cout << myArray_02[i] << ", ";
-	cout << endl << endl;
-
-	length = 1;
-	double myArray_03[] = { 3.1 };
-
-	cout << "Before Bubblesort:\n";
-	for (int i = 0; i < length; i++)
-		cout << myArray_03[i] << ", ";
-	cout << endl;
-
-	bubblesortArray(myArray_03, length);
-
-	cout << "After Bubblesort:\n";
-	for (int i = 0; i < length; i++)
-		cout << myArray_03[i] << ", ";
-	cout << endl << endl;
-
-
-	length = 3;
-	string myArray_04[] = { "Tom", "Joe", "Annie"};
-
-	cout << "Before Bubblesort:\n";
-	for (int i = 0; i < length; i++)
-		cout << myArray_04[i] << ", ";
-	cout << endl;
-
-	bubblesortArray(myArray_04, length);
-
-	cout << "After Bubblesort:\n";
-	for (int i = 0; i < length; i++)
-		cout << myArray_04[i] << ", ";
-	cout << endl << endl;
-
-}
-
+/**
+ * Smoke test my Circular Linked List data structure.
+ */
 void TestCircularList()
 {
 	cout << "TESTING CIRCULARLY LINKED LIST" << endl << endl;
@@ -790,6 +728,9 @@ void TestCircularList()
 
 }
 
+/**
+ * Smoke test my Linear Probing Hash Table data structure.
+ */
 void TestLinearProbingHashTable()
 {
 	cout << "TESTING LINEAR PROBING HASH TABLE" << endl << endl;
@@ -865,6 +806,9 @@ void TestLinearProbingHashTable()
 
 }
 
+/**
+ * Smoke test my Chained Hash Table data structure.
+ */
 void TestChainedHashTable()
 {
 	cout << "TESTING CHAINED HASH TABLE" << endl << endl;
@@ -961,4 +905,94 @@ void TestChainedHashTable()
 	cout << "remove Adam:   \t" << stringHash.remove(stringOut) << endl;
 
 	stringHash.display();
+}
+
+
+/////////////////////////////////////////////////////////////////////////
+// ALGORITHMS
+/////////////////////////////////////////////////////////////////////////
+
+/**
+ * Test the functionality of my Bubble Sort Algorithm.
+ */
+void TestBubblesort()
+{
+	int length = 2;
+	int myArray_00[] = { 3, 2, };
+
+	cout << "Before Bubblesort:\n";
+	for (int i = 0; i < length; i++)
+		cout << myArray_00[i] << ", ";
+	cout << endl;
+
+	bubblesortArray(myArray_00, length);
+
+	cout << "After Bubblesort:\n";
+	for (int i = 0; i < length; i++)
+		cout << myArray_00[i] << ", ";
+	cout << endl << endl;
+
+
+	length = 5;
+	int myArray_01[] = { 3, 2, 9, 7, 4 };
+
+	cout << "Before Bubblesort:\n";
+	for (int i = 0; i < length; i++)
+		cout << myArray_01[i] << ", ";
+	cout << endl;
+
+	bubblesortArray(myArray_01, length);
+
+	cout << "After Bubblesort:\n";
+	for (int i = 0; i < length; i++)
+		cout << myArray_01[i] << ", ";
+	cout << endl << endl;
+
+
+	length = 6;
+	double myArray_02[] = { 2.5, .7, 9.7, 6.5, 3.4, 1.8 };
+
+	cout << "Before Bubblesort:\n";
+	for (int i = 0; i < length; i++)
+		cout << myArray_02[i] << ", ";
+	cout << endl;
+
+	bubblesortArray(myArray_02, length);
+
+	cout << "After Bubblesort:\n";
+	for (int i = 0; i < length; i++)
+		cout << myArray_02[i] << ", ";
+	cout << endl << endl;
+
+	length = 1;
+	double myArray_03[] = { 3.1 };
+
+	cout << "Before Bubblesort:\n";
+	for (int i = 0; i < length; i++)
+		cout << myArray_03[i] << ", ";
+	cout << endl;
+
+	bubblesortArray(myArray_03, length);
+
+	cout << "After Bubblesort:\n";
+	for (int i = 0; i < length; i++)
+		cout << myArray_03[i] << ", ";
+	cout << endl << endl;
+
+
+	length = 3;
+	string myArray_04[] = { "Tom", "Joe", "Annie" };
+
+	cout << "Before Bubblesort:\n";
+	for (int i = 0; i < length; i++)
+		cout << myArray_04[i] << ", ";
+	cout << endl;
+
+	bubblesortArray(myArray_04, length);
+
+	cout << "After Bubblesort:\n";
+	for (int i = 0; i < length; i++)
+		cout << myArray_04[i] << ", ";
+	cout << endl << endl;
+
 }
