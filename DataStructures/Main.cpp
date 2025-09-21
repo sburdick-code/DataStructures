@@ -21,7 +21,7 @@ using namespace std;
 #include "HashTable/CHashTable.h"
 
 #include "Algorithms/Bubblesort.h"
-
+#include "Algorithms/InsertionSort.h"
 
 void TestStack();
 void TestQueue();
@@ -45,9 +45,23 @@ int main()
 	// TestCircularList();
 	//TestNewFunctions_UnorderedList();
 	//TestLinearProbingHashTable
-	TestChainedHashTable();
+	//TestChainedHashTable();
 
 	// TestBubblesort();
+	const int LENGTH = 4;
+	int myArray[LENGTH] = { 19, 5, 1, 12 };
+
+	cout << "Before Insertion Sort:\t";
+	for (int i = 0; i < LENGTH; i++)
+		cout << myArray[i] << ", ";
+	cout << endl;
+
+	insertionSortArray(myArray, LENGTH);
+
+	cout << "After Insertion Sort:\t";
+	for (int i = 0; i < LENGTH; i++)
+		cout << myArray[i] << ", ";
+	cout << endl;
 
 }
 

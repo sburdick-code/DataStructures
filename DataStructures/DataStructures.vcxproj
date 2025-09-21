@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Algorithms\Bubblesort.h" />
+    <ClInclude Include="Algorithms\InsertionSort.h" />
     <ClInclude Include="DLList\DLList.h" />
     <ClInclude Include="HashTable\CHashTable.h" />
     <ClInclude Include="HashTable\LPHashTable.h" />
