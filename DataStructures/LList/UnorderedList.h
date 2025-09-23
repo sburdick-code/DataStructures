@@ -1,3 +1,13 @@
+/*
+ * This file is part of DataStructures.sln.
+ * Developed for educational purposes.
+ * This program is free software: you can redistribute it and/or modify it.
+ *
+ * This program is used to create an Ubnordered Linked List, its data, and its
+ * member functions.
+ *
+ */
+
 #ifndef UNORDEREDLIST_H
 #define UNORDEREDLIST_H
 
@@ -37,12 +47,20 @@ class UnorderedList
 		bool merge(UnorderedList & mergeList);
 };
 
+/**
+ * Initializes the Unordered Linked List.
+ */
 template <typename TYPE>
 UnorderedList<TYPE>::UnorderedList()
 {
 	front = nullptr;
 }
 
+/**
+ * Construct a list to contain n elements (set to 0)
+ * 
+ * @param n The number of elments to initialize into the list.
+ */
 template <typename TYPE>
 UnorderedList<TYPE>::UnorderedList(const int n)
 {
@@ -61,6 +79,12 @@ UnorderedList<TYPE>::UnorderedList(const int n)
 	front = pAfter;
 }
 
+/**
+* Construct a list to contain n copies of initData.
+* 
+* @param n The number of elments to initialize into the list.
+* @param initData The data to be added to the linked list n times.
+*/
 template <typename TYPE>
 UnorderedList<TYPE>::UnorderedList(const int n, const TYPE& initData)
 {
@@ -78,6 +102,12 @@ UnorderedList<TYPE>::UnorderedList(const int n, const TYPE& initData)
 	front = pAfter;
 }
 
+/**
+* Construct a list to contain copies of elements in memory locations pFirst up to pLast.
+* 
+* @param pFirst The first memory location.
+* @param pLast The last memory location.
+*/
 template <typename TYPE>
 UnorderedList<TYPE>::UnorderedList(TYPE* pFirst, TYPE* pLast)
 {
@@ -100,6 +130,9 @@ UnorderedList<TYPE>::UnorderedList(TYPE* pFirst, TYPE* pLast)
 	}
 }
 
+/**
+ * Destructor for the Unordered Linked List.
+ */
 template <typename TYPE>
 UnorderedList<TYPE>::~UnorderedList()
 {
@@ -113,6 +146,12 @@ UnorderedList<TYPE>::~UnorderedList()
 	}
 }
 
+/**
+ * Inserts data as the first element into the Linked List.
+ *
+ * @param dataIn The data being inserted.
+ * @return Returns true if successful, false if the data could not be inserted.
+ */
 template <typename TYPE>
 bool UnorderedList<TYPE>::pushFront(const TYPE& dataIn)
 {
@@ -129,6 +168,12 @@ bool UnorderedList<TYPE>::pushFront(const TYPE& dataIn)
 	return success;
 }
 
+/**
+ * Inserts data as the last element into the Linked List.
+ *
+ * @param dataIn The data being inserted.
+ * @return Returns true if successful, false if the data could not be inserted.
+ */
 template <typename TYPE>
 bool UnorderedList<TYPE>::pushBack(const TYPE& dataIn)
 {
@@ -156,6 +201,13 @@ bool UnorderedList<TYPE>::pushBack(const TYPE& dataIn)
 	return success;
 }
 
+/**
+ * Inserts data into the Linked List in the specified position.
+ *
+ * @param pos The index location of the data to be inserted. If out of range, insert at the end.
+ * @param dataIn The data being inserted.
+ * @return Returns true if successful, false if the data could not be inserted.
+ */
 template <typename TYPE>
 bool UnorderedList<TYPE>::insert(const int pos, const TYPE& dataIn)
 {
@@ -185,6 +237,12 @@ bool UnorderedList<TYPE>::insert(const int pos, const TYPE& dataIn)
 	return success;
 }
 
+/**
+ * Removes the first item from the Linked List.
+ *
+ * @param dataOut The data being removed.
+ * @return Returns true if successful, false if the data could not be inserted.
+ */
 template <typename TYPE>
 bool UnorderedList<TYPE>::popFront(TYPE& dataOut)
 {
@@ -202,6 +260,12 @@ bool UnorderedList<TYPE>::popFront(TYPE& dataOut)
 	return success;
 }
 
+/**
+ * Removes the last item from the Linked List.
+ *
+ * @param dataOut The data being removed.
+ * @return Returns true if successful, false if the data could not be inserted.
+ */
 template <typename TYPE>
 bool UnorderedList<TYPE>::popBack(TYPE& dataOut)
 {
@@ -231,6 +295,12 @@ bool UnorderedList<TYPE>::popBack(TYPE& dataOut)
 	return success;
 }
 
+/**
+ * Removes the specified data from the Linked List.
+ *
+ * @param dataOut The data being removed.
+ * @return Returns true if successful, false if the data could not be inserted.
+ */
 template <typename TYPE>
 bool UnorderedList<TYPE>::remove(TYPE& dataOut)
 {
@@ -260,6 +330,12 @@ bool UnorderedList<TYPE>::remove(TYPE& dataOut)
 	return success;
 }
 
+/**
+ * Finds specified data into the linked list, but does not remove it.
+ *
+ * @param dataOut The data searched for.
+ * @return Returns true if successful, false if the data could not be found.
+ */
 template <typename TYPE>
 bool UnorderedList<TYPE>::retrieve(TYPE& dataOut) const
 {
@@ -280,6 +356,12 @@ bool UnorderedList<TYPE>::retrieve(TYPE& dataOut) const
 	return success;
 }
 
+/**
+ * Finds front element of the linked list, but does not remove it.
+ *
+ * @param dataOut The data searched for.
+ * @return Returns true if successful, false if the data could not be found.
+ */
 template <typename TYPE>
 bool UnorderedList<TYPE>::viewFront(TYPE& dataOut) const
 {
@@ -294,6 +376,12 @@ bool UnorderedList<TYPE>::viewFront(TYPE& dataOut) const
 	return success;
 }
 
+/**
+ * Finds last element of the linked list, but does not remove it.
+ *
+ * @param dataOut The data searched for.
+ * @return Returns true if successful, false if the data could not be found.
+ */
 template <typename TYPE>
 bool UnorderedList<TYPE>::viewRear(TYPE& dataOut) const
 {
@@ -314,6 +402,9 @@ bool UnorderedList<TYPE>::viewRear(TYPE& dataOut) const
 	return success;
 }
 
+/**
+ * Nicely prints out the contents of the linked list in a human readable format.
+ */
 template <typename TYPE>
 void UnorderedList<TYPE>::display() const
 {
@@ -328,6 +419,11 @@ void UnorderedList<TYPE>::display() const
 	cout << endl;
 }
 
+/**
+* Returns the number of elements in the linked list.
+*
+* @return Returns number of elements
+*/
 template <typename TYPE>
 int UnorderedList<TYPE>::getNumValues() const
 {
@@ -343,12 +439,22 @@ int UnorderedList<TYPE>::getNumValues() const
 	return numValues;
 }
 
+/**
+* Determines if the linked list has elements or not.
+*
+* @return Returns true if empty
+*/
 template <typename TYPE>
 bool UnorderedList<TYPE>::isEmpty() const
 {
 	return (!front);
 }
 
+/**
+* Determines if the linked list can store another value.
+*
+* @return Returns true if no more space to store an element.
+*/
 template <typename TYPE>
 bool UnorderedList<TYPE>::isFull() const
 {
@@ -365,6 +471,11 @@ bool UnorderedList<TYPE>::isFull() const
 	return full;
 }
 
+/**
+* Merge another unordered linked list into this one.
+* 
+* @return Returns true if the merge was successful
+*/
 template <typename TYPE>
 bool UnorderedList<TYPE>::merge(UnorderedList& mergeList)
 {

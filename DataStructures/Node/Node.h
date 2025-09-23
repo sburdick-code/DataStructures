@@ -1,3 +1,13 @@
+/*
+ * This file is part of DataStructures.sln.
+ * Developed for educational purposes.
+ * This program is free software: you can redistribute it and/or modify it.
+ *
+ * This program is used to create a Node Struct for use in other data 
+ * structures.
+ *
+ */
+
 #ifndef NODE_H
 #define NODE_H
 

@@ -1,3 +1,13 @@
+/*
+ * This file is part of DataStructures.sln.
+ * Developed for educational purposes.
+ * This program is free software: you can redistribute it and/or modify it.
+ *
+ * This program is used to create a Circular Linked List, its data, and its
+ * member functions.
+ *
+ */
+
 #ifndef CIRCULARLIST_H
 #define CIRCULARLIST_H
 
@@ -24,6 +34,9 @@ public:
 	
 };
 
+/**
+ * Initializes the Circular Linked List.
+ */
 template <typename TYPE>
 CircularList<TYPE>::CircularList()
 {
@@ -37,6 +50,9 @@ CircularList<TYPE>::CircularList()
 	}
 }
 
+/**
+ * Destructor for the Ciircular Linked List.
+ */
 template <typename TYPE>
 CircularList<TYPE>::~CircularList()
 {
@@ -52,6 +68,12 @@ CircularList<TYPE>::~CircularList()
 	}
 }
 
+/**
+ * Inserts an item into the first element of the Linked List.
+ *
+ * @param dataIn The data being inserted.
+ * @return Returns true if successful, false if the data could not be inserted.
+ */
 template <typename TYPE>
 bool CircularList<TYPE>::pushFront(const TYPE& dataIn)
 {
@@ -71,6 +93,12 @@ bool CircularList<TYPE>::pushFront(const TYPE& dataIn)
 	return success;
 }
 
+/**
+ * Inserts data into the last element of the Linked List.
+ *
+ * @param dataIn The data being inserted.
+ * @return Returns true if successful, false if the data could not be inserted.
+ */
 template <typename TYPE>
 bool CircularList<TYPE>::pushBack(const TYPE& dataIn)
 {
@@ -95,6 +123,12 @@ bool CircularList<TYPE>::pushBack(const TYPE& dataIn)
 	
 }
 
+/**
+ * Inserts data into the Linked List.
+ *
+ * @param dataIn The data being inserted.
+ * @return Returns true if successful, false if the data could not be inserted.
+ */
 template <typename TYPE>
 bool CircularList<TYPE>::insert(const int pos, const TYPE& dataIn)
 {
@@ -119,6 +153,12 @@ bool CircularList<TYPE>::insert(const int pos, const TYPE& dataIn)
 	return success;
 }
 
+/**
+ * Removes an item from the Linked List.
+ *
+ * @param dataOut The data being removed.
+ * @return Returns true if successful, false if the data could not be inserted.
+ */
 template <typename TYPE>
 bool CircularList<TYPE>::remove(TYPE& dataOut)
 {
@@ -142,6 +182,12 @@ bool CircularList<TYPE>::remove(TYPE& dataOut)
 	return success;
 }
 
+/**
+ * Finds specified data into the linked list, but does not remove it.
+ *
+ * @param dataOut The data searched for.
+ * @return Returns true if successful, false if the data could not be found.
+ */
 template <typename TYPE>
 bool CircularList<TYPE>::retrieve(TYPE& dataOut) const
 {
@@ -161,6 +207,9 @@ bool CircularList<TYPE>::retrieve(TYPE& dataOut) const
 	return success;
 }
 
+/**
+ * Nicely prints out the contents of the linked list in a human readable format.
+ */
 template <typename TYPE>
 void CircularList<TYPE>::display() const
 {
@@ -175,12 +224,22 @@ void CircularList<TYPE>::display() const
 	cout << endl;
 }
 
+/**
+* Returns the number of elements in the linked list.
+*
+* @return Returns number of elements
+*/
 template <typename TYPE>
 int CircularList<TYPE>::getNumValues() const
 {
 	return (int(front->data));
 }
 
+/**
+* Determines if the linked list has elements or not.
+*
+* @return Returns true if empty
+*/
 template <typename TYPE>
 bool CircularList<TYPE>::isEmpty() const
 {
@@ -194,6 +253,11 @@ bool CircularList<TYPE>::isEmpty() const
 	return (empty);
 }
 
+/**
+* Determines if the linked list can store another value.
+*
+* @return Returns true if no more space to store an element.
+*/
 template <typename TYPE>
 bool CircularList<TYPE>::isFull() const
 {
