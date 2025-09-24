@@ -72,7 +72,10 @@
       <Filter>Header Files\HashTable</Filter>
     </ClInclude>
     <ClInclude Include="Algorithms\InsertionSort.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\Algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="Algorithms\QuickSort.h">
+      <Filter>Header Files\Algorithms</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

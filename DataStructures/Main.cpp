@@ -22,6 +22,7 @@ using namespace std;
 
 #include "Algorithms/Bubblesort.h"
 #include "Algorithms/InsertionSort.h"
+#include "Algorithms/QuickSort.h"
 
 void TestStack();
 void TestQueue();
@@ -34,6 +35,8 @@ void TestLinearProbingHashTable();
 void TestChainedHashTable();
 
 void TestBubblesort();
+void TestInsertionSort();
+void TestQuickSort();
 
 int main()
 {
@@ -48,20 +51,8 @@ int main()
 	//TestChainedHashTable();
 
 	// TestBubblesort();
-	const int LENGTH = 4;
-	int myArray[LENGTH] = { 19, 5, 1, 12 };
-
-	cout << "Before Insertion Sort:\t";
-	for (int i = 0; i < LENGTH; i++)
-		cout << myArray[i] << ", ";
-	cout << endl;
-
-	insertionSortArray(myArray, LENGTH);
-
-	cout << "After Insertion Sort:\t";
-	for (int i = 0; i < LENGTH; i++)
-		cout << myArray[i] << ", ";
-	cout << endl;
+	// TestInsertionSort();
+	TestQuickSort();
 
 }
 
@@ -1008,5 +999,85 @@ void TestBubblesort()
 	for (int i = 0; i < length; i++)
 		cout << myArray_04[i] << ", ";
 	cout << endl << endl;
+
+}
+
+/**
+ * Test the functionality of my Insertion Sort Algorithm.
+ */
+void TestInsertionSort()
+{
+	const int LENGTH = 4;
+	int myArray[LENGTH] = { 19, 5, 1, 12 };
+
+	cout << "Before Insertion Sort:\t";
+	for (int i = 0; i < LENGTH; i++)
+		cout << myArray[i] << ", ";
+	cout << endl;
+
+	insertionSortArray(myArray, LENGTH);
+
+	cout << "After Insertion Sort:\t";
+	for (int i = 0; i < LENGTH; i++)
+		cout << myArray[i] << ", ";
+	cout << endl;
+}
+
+/**
+ * Test the functionality of my Quick Sort Algorithm.
+ */
+void TestQuickSort()
+{
+	// Test Int Array
+	cout << "Initializing int array:\n";
+	const int SIZE_0 = 7;
+	int myIntArray[SIZE_0] = { 20, 50, 10, 23, 40, 65, 90 };
+
+	cout << "Before Quick Sort:\t";
+	for (int i = 0; i < SIZE_0; i++)
+		cout << myIntArray[i] << ", ";
+	cout << endl;
+
+	quickSort(myIntArray, SIZE_0);
+
+	cout << "After Quick Sort:\t";
+	for (int i = 0; i < SIZE_0; i++)
+		cout << myIntArray[i] << ", ";
+	cout << endl << endl;
+
+	// Test Float Array
+	cout << "Initializing float array:\n";
+	const int SIZE_1 = 10;
+	float myFloatArray[SIZE_1] = { 8.1, 1.3, 9.5, 1.4, 1.1, 2.3, 4.2, 6.5, 9.9, 0.3 };
+
+	cout << "Before Quick Sort:\t";
+	for (int i = 0; i < SIZE_1; i++)
+		cout << myFloatArray[i] << ", ";
+	cout << endl;
+
+	quickSort(myFloatArray, SIZE_1);
+
+	cout << "After Quick Sort:\t";
+	for (int i = 0; i < SIZE_1; i++)
+		cout << myFloatArray[i] << ", ";
+	cout << endl << endl;
+
+	// Test Char Array
+	cout << "Initializing char array:\n";
+	const int SIZE_2 = 4;
+	char myCharArray[SIZE_2] = { 'V', 'K', 'A', 'S'};
+
+	cout << "Before Quick Sort:\t";
+	for (int i = 0; i < SIZE_2; i++)
+		cout << myCharArray[i] << ", ";
+	cout << endl;
+
+	quickSort(myCharArray, SIZE_2);
+
+	cout << "After Quick Sort:\t";
+	for (int i = 0; i < SIZE_2; i++)
+		cout << myCharArray[i] << ", ";
+	cout << endl << endl;
+
 
 }
