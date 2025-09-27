@@ -23,6 +23,7 @@ using namespace std;
 #include "Algorithms/Bubblesort.h"
 #include "Algorithms/InsertionSort.h"
 #include "Algorithms/QuickSort.h"
+#include "Algorithms/Searches.h"
 
 void TestStack();
 void TestQueue();
@@ -37,6 +38,7 @@ void TestChainedHashTable();
 void TestBubblesort();
 void TestInsertionSort();
 void TestQuickSort();
+void TestBinarySearch();
 
 int main()
 {
@@ -46,13 +48,14 @@ int main()
 	// TestUnorderedList();
 	// TestOrderedDoublyLinkedList();
 	// TestCircularList();
-	//TestNewFunctions_UnorderedList();
-	//TestLinearProbingHashTable
-	//TestChainedHashTable();
+	// TestNewFunctions_UnorderedList();
+	// TestLinearProbingHashTable
+	// TestChainedHashTable();
 
 	// TestBubblesort();
 	// TestInsertionSort();
-	TestQuickSort();
+	// TestQuickSort();
+	TestBinarySearch();
 
 }
 
@@ -1080,4 +1083,61 @@ void TestQuickSort()
 	cout << endl << endl;
 
 
+}
+
+/**
+ * Test the functionality of my Binary Search Algorithm.
+ */
+void TestBinarySearch()
+{
+	cout << "TESTING FLOAT ARRAY:\n\n";
+
+	const int SIZE_0 = 7;
+	int myIntArray[SIZE_0] = { 2, 3, 4, 5, 6, 7, 8 };
+
+	cout << "Creating Int Array: \t";
+
+	for (int i = 0; i < SIZE_0; i++)
+		cout << myIntArray[i] << ", ";
+	cout << endl;
+
+	// Target 4
+	int target = 4;
+	cout << "Target: " << target;
+
+	int index = binarySearch(myIntArray, SIZE_0, target);
+	if (index >= 0)
+		cout << "\tFound: " << myIntArray[index] << endl;
+	else
+		cout << "\tNot Found" << endl;
+
+	// Target 8
+	target = 8;
+	cout << "Target: " << target;
+
+	index = binarySearch(myIntArray, SIZE_0, target);
+	if (index >= 0)
+		cout << "\tFound: " << myIntArray[index] << endl;
+	else
+		cout << "\tNot Found" << endl;
+
+	// Target 2
+	target = 2;
+	cout << "Target: " << target;
+
+	index = binarySearch(myIntArray, SIZE_0, target);
+	if (index >= 0)
+		cout << "\tFound: " << myIntArray[index] << endl;
+	else
+		cout << "\tNot Found: " << index << endl;
+
+	// Target 50
+	target = 50;
+	cout << "Target: " << target;
+
+	index = binarySearch(myIntArray, SIZE_0, target);
+	if (index >= 0)
+		cout << "\tFound: " << myIntArray[index] << endl;
+	else
+		cout << "\tNot Found: " << index << endl;
 }

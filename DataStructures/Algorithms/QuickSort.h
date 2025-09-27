@@ -19,7 +19,7 @@
   * continually shorten the length it has to sort.
   *
   * @param arrayIn[] The array to be sorted.
-  * @param length The length of the array.
+  * @param size The length of the array.
   */
 template <typename TYPE>
 void partition(TYPE arrayIn[], const int size)
@@ -51,7 +51,7 @@ void partition(TYPE arrayIn[], const int size)
   * Quick Sort an array in numerical order.
   *
   * @param arrayIn[] The array to be sorted.
-  * @param length The length of the array.
+  * @param size The length of the array.
   */
 template <typename TYPE>
 void quickSort(TYPE arrayIn[], const int size)

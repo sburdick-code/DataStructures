@@ -16,15 +16,15 @@
   * Insertion Sort an array in numerical order.
   *
   * @param arrayIn[] The array to be sorted.
-  * @param length The length of the array.
+  * @param size The length of the array.
   */
 template <typename TYPE>
-void insertionSortArray(TYPE arrayIn[], const int length)
+void insertionSortArray(TYPE arrayIn[], const int size)
 {
 	TYPE dTemp;
 	int iInsert;
 
-	for (int i = 0; i < length; i++)
+	for (int i = 0; i < size; i++)
 	{
 		iInsert = i;
 		while (iInsert > 0 && arrayIn[iInsert - 1] > arrayIn[iInsert])
