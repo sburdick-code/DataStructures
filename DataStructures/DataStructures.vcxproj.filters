@@ -83,5 +83,8 @@
     <ClInclude Include="Node\BinNode.h">
       <Filter>Header Files\Node</Filter>
     </ClInclude>
+    <ClInclude Include="BinaryTree\OrderedBinaryTree.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
