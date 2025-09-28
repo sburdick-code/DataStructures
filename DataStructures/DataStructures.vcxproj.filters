@@ -80,5 +80,8 @@
     <ClInclude Include="Algorithms\Searches.h">
       <Filter>Header Files\Algorithms</Filter>
     </ClInclude>
+    <ClInclude Include="Node\BinNode.h">
+      <Filter>Header Files\Node</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

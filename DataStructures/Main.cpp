@@ -55,8 +55,9 @@ int main()
 	// TestBubblesort();
 	// TestInsertionSort();
 	// TestQuickSort();
-	TestBinarySearch();
+	// TestBinarySearch();
 
+	
 }
 
 /////////////////////////////////////////////////////////////////////////

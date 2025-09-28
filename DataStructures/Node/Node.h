@@ -22,6 +22,9 @@ struct Node
 	Node(const TYPE& d, Node<TYPE>* n = nullptr, Node<TYPE>* p = nullptr);
 };
 
+/**
+* Construct the Node with null values.
+*/
 template <typename TYPE>
 Node<TYPE>::Node()
 {
@@ -29,6 +32,13 @@ Node<TYPE>::Node()
 	next = nullptr;
 }
 
+/**
+* Construct the BinNode with user defined values.
+*
+* @param d The data to be entered into the node.
+* @param n Pointer to the next node.
+* @param p Pointer to the previous node.
+*/
 template <typename TYPE>
 Node<TYPE>::Node(const TYPE & d, Node<TYPE>* n, Node<TYPE>* p)
 {
